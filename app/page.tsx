@@ -86,7 +86,7 @@ export default function Home() {
           <input style={styles.input}  placeholder="City" onChange={e => setRequest(request => ({
             ...request, city: e.target.value
           }))} />
-          <input style={styles.input} placeholder="Days" onChange={e => setRequest(request => ({
+          <input style={styles.input} placeholder="Days to spend" onChange={e => setRequest(request => ({
             ...request, days: e.target.value
           }))} />
           <button className="input-button"  onClick={hitAPI}>Build Itinerary</button>

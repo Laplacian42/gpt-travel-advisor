@@ -40,6 +40,7 @@ export default async function handler(
   }
 
   let basePrompt = `Was ist ein Reiseprogramm für ${days} tage in ${city}?`
+  console.log("basePrompt: ", basePrompt)
   try {
     const response = await fetch('https://api.openai.com/v1/completions', {
       method: 'POST',

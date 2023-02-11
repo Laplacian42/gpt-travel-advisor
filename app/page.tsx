@@ -23,18 +23,18 @@ export default function Home() {
   async function hitAPI() {
     try {
       if (!request.city || !request.days) return
-      setMessage('Building itinerary...')
+      setMessage('Erstelle Reiseprogramm..')
       setLoading(true)
       setItinerary('')
 
       setTimeout(() => {
         if (!loading) return
-        setMessage('Getting closer ...')
+        setMessage('Einen Moment ...')
       }, 7000)
 
       setTimeout(() => {
         if (!loading) return
-        setMessage('Almost there ...')
+        setMessage('Fast fertig ...')
       }, 15000)
 
       const response = await fetch('/api/get-itinerary', {
@@ -81,15 +81,15 @@ export default function Home() {
   return (
     <main>
       <div className="app-container">
-        <h1 style={styles.header} className="hero-header">Roam Around</h1>
+        <h1 style={styles.header} className="hero-header">Der Rumtreiber</h1>
         <div style={styles.formContainer} className="form-container">
-          <input style={styles.input}  placeholder="City" onChange={e => setRequest(request => ({
+          <input style={styles.input}  placeholder="Stadt" onChange={e => setRequest(request => ({
             ...request, city: e.target.value
           }))} />
-          <input style={styles.input} placeholder="Days" onChange={e => setRequest(request => ({
+          <input style={styles.input} placeholder="Dauer in Tagen" onChange={e => setRequest(request => ({
             ...request, days: e.target.value
           }))} />
-          <button className="input-button"  onClick={hitAPI}>Build Itinerary</button>
+          <button className="input-button"  onClick={hitAPI}>Reiseprogramm erstellen</button>
         </div>
         <div className="results-container">
         {

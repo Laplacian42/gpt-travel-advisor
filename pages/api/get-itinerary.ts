@@ -39,7 +39,7 @@ export default async function handler(
     days = 10
   }
 
-  let basePrompt = `Was ist ein Reiseprogramm für ${days} tage in ${city}?. Beeile Dich. Der API Aufruf darf nur 9 sekunden dauern.`
+  let basePrompt = `Was ist ein Reiseprogramm für ${days} tage in ${city}?`
   console.log("basePrompt: ", basePrompt)
   try {
     const response = await fetch('https://api.openai.com/v1/completions', {
